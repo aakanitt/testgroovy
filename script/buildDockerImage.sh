@@ -20,7 +20,7 @@ docker build --no-cache -t $dockerImageName:$dockerTagVersion .
 echo ""
 docker tag $dockerImageName:$dockerTagVersion $dockerRegistry:$dockerTagVersion
 echo ""
-eval $(aws ecr get-login --no-include-email)
+eval $(aws ecr get-login  | sed 's/ \-e none//')
 docker push $dockerRegistry:$dockerTagVersion
 echo ""
 docker images
