@@ -11,4 +11,5 @@ echo "dockerTagVersion" $dockerTagVersion
 echo $jenkinsWorkspace
 echo "dockerRegistry" $dockerRegistry
 echo ""
+docker images
 aws ecr list-images --repository-name=pao/nginx
