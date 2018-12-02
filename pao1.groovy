@@ -11,7 +11,7 @@ node {
    stage('Build Docker Image'){
             dir('.'){
                     sh '''
-                      ${WORKSPACE}/$project_name/buildDockerImage.sh $app_name $tag_version ${WORKSPACE}/$project_name $ecr_repo
+                      ${WORKSPACE}/buildDockerImage.sh $app_name $tag_version $project_name $ecr_repo
                     '''
             }
    }
