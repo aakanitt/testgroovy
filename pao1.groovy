@@ -9,10 +9,8 @@ node {
       git 'https://github.com/aakanitt/testgroovy.git'
    }
    stage('Build Docker Image'){
-            {
                     sh '''
                       ${WORKSPACE}/buildDockerImage.sh $app_name $tag_version $project_name $ecr_repo
                     '''
-            }
    }
 }
