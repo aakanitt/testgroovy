@@ -1,5 +1,5 @@
 #!groovy
-env.project_name = "testPipeline1"
+env.project_name = "testdocker1"
 env.app_name = "test-nginx"
 env.tag_version = env.app_name + "-" + env.BUILD_NUMBER
 env.ecr_repo = "878147804699.dkr.ecr.ap-southeast-1.amazonaws.com/pao/nginx"
@@ -10,7 +10,7 @@ node {
    }
    stage('Build Docker Image'){
                     sh '''
-                      ${WORKSPACE}/buildDockerImage.sh $app_name $tag_version $project_name $ecr_repo
+                      ${WORKSPACE}/buildDockerImage.sh $app_name $tag_version ${WORKSPACE}/$project_name $ecr_repo
                     '''
    }
 }
