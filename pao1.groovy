@@ -10,7 +10,7 @@ node {
    }
    stage('Build Docker Image'){
                     sh '''
-                      ${WORKSPACE}/buildDockerImage.sh $app_name $tag_version ${WORKSPACE} $ecr_repo
+                      ${WORKSPACE}/script/buildDockerImage.sh $app_name $tag_version ${WORKSPACE} $ecr_repo
                     '''
    }
 }

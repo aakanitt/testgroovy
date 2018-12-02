@@ -13,8 +13,8 @@ echo $jenkinsWorkspace
 echo "dockerRegistry" $dockerRegistry
 echo ""
 rm -rf $jenkinsWorkspace/$buildFolder
-mkdir $jenkinsWorkspace/$buildFolder
-cp -r $jenkinsWorkspace/* $jenkinsWorkspace/$buildFolder/
+mkdir -p $jenkinsWorkspace/$buildFolder
+cp -r $jenkinsWorkspace/app/* $jenkinsWorkspace/$buildFolder/
 cd $jenkinsWorkspace/$buildFolder/
 docker build --no-cache -t $dockerImageName:$dockerTagVersion .
 echo ""
