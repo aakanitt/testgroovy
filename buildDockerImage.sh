@@ -1,7 +1,7 @@
 #/bin/bash -e
 
 #ENV
-dockerImageName="${1,,}"
+dockerImageName=$1
 dockerTagVersion=$2
 jenkinsWorkspace=$3
 dockerRegistry=$4
